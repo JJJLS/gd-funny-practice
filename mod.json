@@ -1,0 +1,33 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081"
+	},
+	"id": "jaheim.input-buffer",
+	"name": "Input Buffer",
+	"version": "v1.0.0",
+	"developer": "Jaheim",
+	"description": "Practice training wheels: early clicks get delayed a few ticks so you survive tight timings.",
+	"settings": {
+		"rescue-window": {
+			"type": "int",
+			"name": "Rescue window (ticks)",
+			"description": "A death this many ticks or fewer after a click counts as 'caused by an early click' and gets rescued. 240 ticks = 1 second.",
+			"default": 120,
+			"min": 10,
+			"max": 480
+		},
+		"practice-only": {
+			"type": "bool",
+			"name": "Practice mode only",
+			"description": "Only buffer inputs while in practice mode, so normal-mode runs stay legit.",
+			"default": false
+		},
+		"show-label": {
+			"type": "bool",
+			"name": "Show in-game label",
+			"description": "Show the current stage and live tick counter in the top-left corner while playing.",
+			"default": true
+		}
+	}
+}
