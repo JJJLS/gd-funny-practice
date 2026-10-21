@@ -5,7 +5,7 @@
 	},
 	"id": "jaheim.input-buffer",
 	"name": "Input Buffer",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"developer": "Jaheim",
 	"description": "Practice training wheels: early clicks get delayed a few ticks so you survive tight timings.",
 	"settings": {
@@ -27,6 +27,12 @@
 			"type": "bool",
 			"name": "Show in-game label",
 			"description": "Show the current stage and live tick counter in the top-left corner while playing.",
+			"default": true
+		},
+		"debug-log": {
+			"type": "bool",
+			"name": "Debug log",
+			"description": "Print every rescue attempt to the console (which delays were tried and which tick each died on). Useful when something feels wrong.",
 			"default": true
 		}
 	}
