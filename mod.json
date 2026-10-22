@@ -5,17 +5,17 @@
 	},
 	"id": "jaheim.input-buffer",
 	"name": "Input Buffer",
-	"version": "v1.1.0",
+	"version": "v2.0.0",
 	"developer": "Jaheim",
-	"description": "Practice training wheels: early clicks get delayed a few ticks so you survive tight timings.",
+	"description": "Practice training wheels: a hidden ghost predicts your click and moves early clicks (and wave releases) to the first tick that survives.",
 	"settings": {
-		"rescue-window": {
+		"prediction-horizon": {
 			"type": "int",
-			"name": "Rescue window (ticks)",
-			"description": "A death this many ticks or fewer after a click counts as 'caused by an early click' and gets rescued. 240 ticks = 1 second.",
-			"default": 120,
+			"name": "Prediction distance (ticks)",
+			"description": "How far ahead the ghost checks for a death after your input. 240 ticks = 1 second. Longer catches deaths further away but can flag deaths you'd have fixed with a later click.",
+			"default": 60,
 			"min": 10,
-			"max": 480
+			"max": 240
 		},
 		"practice-only": {
 			"type": "bool",
@@ -32,7 +32,7 @@
 		"debug-log": {
 			"type": "bool",
 			"name": "Debug log",
-			"description": "Print every rescue attempt to the console (which delays were tried and which tick each died on). Useful when something feels wrong.",
+			"description": "Print prediction details to the console: inputs with no safe timing, and how closely the ghost's prediction matched what really happened.",
 			"default": true
 		}
 	}
